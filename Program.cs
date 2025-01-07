@@ -3,6 +3,48 @@
     private static void Main(string[] args)
     {
         Console.WriteLine("Application Console pour voir le fonctionnement du LINQ");
+        Console.WriteLine("");
+        Console.WriteLine("Afficher les nombres pairs :");
+        List<int> list = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
+        var nbpairs = from nb in list.OrderByDescending(n => n)
+                      where nb % 2 == 0
+                      select nb;
+        foreach(var nbpair in nbpairs)
+        {
+            Console.WriteLine(nbpair);
+        }
+
+        Console.WriteLine("");
+        Console.WriteLine("Affiher liste  des gens par ordre alphabétique :");
+        List<string> Names = new List<string> {"Myriam","Henri","Maven","Alphonse","Sylvie"};
+        var noms = from n in Names.OrderBy(n => n)
+                 select n;
+        foreach(var name in noms)
+        {
+            Console.WriteLine(name);
+        }
+
+
+        Console.WriteLine("");
+        Console.WriteLine("Travailler avec des objets en utilisant la class Person");
+        Console.WriteLine("Affiher les noms des gens plus de 25 ans :");
+        List<Person> people = new List<Person>
+        {
+            new Person {Name = "Nathan", Age = 36},
+            new Person {Name = "Alicia", Age = 26},
+            new Person {Name = "Marius", Age = 16}
+        };
+
+        var person = from p in people.OrderBy(p => p.Name)
+                     where p.Age >= 25
+                     select p.Name;
+
+        foreach(var pers in person)
+        {
+            Console.WriteLine(pers);
+        }
+
+        Console.WriteLine("");
         Console.WriteLine("Grouper des nombres par parité :");
         List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         var groups = from n in numbers
@@ -17,5 +59,12 @@
                 Console.WriteLine(num);
             }
         }
+
+    }
+
+    class Person
+    {
+        public string Name {  get; set; }
+        public int Age { get; set; }
     }
 }
