@@ -143,12 +143,8 @@
         Console.WriteLine();
         Console.WriteLine("Combiner plusieurs opérations :");
         Console.WriteLine("Filtrer, Trier et transformer une liste");
-        var resultOperation = numbers.Where(n => n > 3).OrderBy(n => n).Select(n => n * 10);
-        foreach(var result in resultOperation)
-        {
-            Console.WriteLine(result);
-        }
-       
+        var resultOperation = numbers.Where(n => n > 3).OrderBy(n => n).Select(n => n * 10).ToList();
+        Console.WriteLine(string.Join(",",resultOperation));
     }
 
     //OBJET
