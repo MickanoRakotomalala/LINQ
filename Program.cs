@@ -145,6 +145,26 @@
         Console.WriteLine("Filtrer, Trier et transformer une liste");
         var resultOperation = numbers.Where(n => n > 3).OrderBy(n => n).Select(n => n * 10).ToList();
         Console.WriteLine(string.Join(",",resultOperation));
+
+
+        //EXO-1
+        Console.WriteLine();
+        Console.WriteLine("EXO-1 : Trouver les nombres impairs dans la liste :");
+        var nbImpairs = numbers.Where(n => n % 2 != 0).OrderByDescending(n=> n).ToList();
+        Console.WriteLine(string.Join(",",nbImpairs));
+
+        //EXO-2
+        Console.WriteLine();
+        Console.WriteLine("EXO-2 : Liste des personnes, Sélectionne uniquement celles dont le nom comme par B");
+        List<string> personnes = new List<string> { "Maria", "Aline", "Bernadette", "Alex" };
+        var noms = personnes.Where(n => n.StartsWith("B")).ToList();
+        Console.WriteLine(string.Join(",", noms));
+
+        //EXO-3
+        Console.WriteLine();
+        Console.WriteLine("EXO-3 : Multiplie tous les nombres d'une liste par 3 et trie-les en ordre décroissant :");
+        var resultNombres = numbers.Select(n => n * 3 ).OrderByDescending(n=> n).ToList();
+        Console.WriteLine(string.Join("," , resultNombres));
     }
 
     //OBJET
