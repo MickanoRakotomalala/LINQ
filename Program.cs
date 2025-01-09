@@ -155,7 +155,7 @@
 
         //EXO-2
         Console.WriteLine();
-        Console.WriteLine("EXO-2 : Liste des personnes, Sélectionne uniquement celles dont le nom comme par B");
+        Console.WriteLine("EXO-2 : Liste des personnes, Sélectionne uniquement celles dont le nom commence par B");
         List<string> personnes = new List<string> { "Maria", "Aline", "Bernadette", "Alex" };
         var noms = personnes.Where(n => n.StartsWith("B")).ToList();
         Console.WriteLine(string.Join(",", noms));
