@@ -165,6 +165,26 @@
         Console.WriteLine("EXO-3 : Multiplie tous les nombres d'une liste par 3 et trie-les en ordre décroissant :");
         var resultNombres = numbers.Select(n => n * 3 ).OrderByDescending(n=> n).ToList();
         Console.WriteLine(string.Join("," , resultNombres));
+
+
+        //Afficher les nombres impairs dans la liste de 1 à 101
+        List<int> impairs = new List<int>(); //Liste pour stocker les nombres impairs
+
+        for(int i = 1; i <= 101; i++)
+        {
+            if(i % 2 != 0)
+            {
+                impairs.Add(i);
+            }
+        }
+
+        //Afficher les nombres impairs
+        Console.WriteLine("Afficher les nombres impairs :");
+        foreach(int nb in impairs)
+        {
+            Console.WriteLine(nb);
+        }
+
     }
 
     //OBJET
